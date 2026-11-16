@@ -1,0 +1,2602 @@
+[
+  {
+    "alert_id": "ALT-2026-0001",
+    "timestamp": "2022/09/01 00:29",
+    "subject_id": "SUBJ_8004661C0",
+    "counterparty_id": "CPTY_80FCBD6E0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 24,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 315834.89,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6916.52,
+      "max_historical_tx_amount": 18957.19,
+      "avg_monthly_tx_count": 24,
+      "spike_multiplier": 45.66
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 77.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0002",
+    "timestamp": "2022/09/04 14:59",
+    "subject_id": "SUBJ_811C599A0",
+    "counterparty_id": "CPTY_811C597B0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 27,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 269050.34,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5856.69,
+      "max_historical_tx_amount": 10467.04,
+      "avg_monthly_tx_count": 24,
+      "spike_multiplier": 45.94
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 0.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0003",
+    "timestamp": "2022/09/01 00:16",
+    "subject_id": "SUBJ_8005FB700",
+    "counterparty_id": "CPTY_813600910",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 41,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 323536.63,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8256.81,
+      "max_historical_tx_amount": 13769.83,
+      "avg_monthly_tx_count": 37,
+      "spike_multiplier": 39.18
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 66.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0004",
+    "timestamp": "2022/09/01 02:52",
+    "subject_id": "SUBJ_80BC62F10",
+    "counterparty_id": "CPTY_80F025640",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 25,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 246419.37,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5103.78,
+      "max_historical_tx_amount": 14242.88,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 48.28
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 0.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0005",
+    "timestamp": "2022/09/01 01:58",
+    "subject_id": "SUBJ_100428660",
+    "counterparty_id": "CPTY_8033AA1B0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 63,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 208813.19,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5134.27,
+      "max_historical_tx_amount": 8356.92,
+      "avg_monthly_tx_count": 23,
+      "spike_multiplier": 40.67
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 1.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0006",
+    "timestamp": "2022/09/04 03:24",
+    "subject_id": "SUBJ_801B949C0",
+    "counterparty_id": "CPTY_803DE1580",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 58,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 292284.36,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6876.85,
+      "max_historical_tx_amount": 14766.55,
+      "avg_monthly_tx_count": 28,
+      "spike_multiplier": 42.5
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 4.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0007",
+    "timestamp": "2022/09/03 04:39",
+    "subject_id": "SUBJ_801F8CCB0",
+    "counterparty_id": "CPTY_801C92FF0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 24,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 290701.55,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9868.67,
+      "max_historical_tx_amount": 21317.47,
+      "avg_monthly_tx_count": 18,
+      "spike_multiplier": 29.46
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 3.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0008",
+    "timestamp": "2022/09/01 00:00",
+    "subject_id": "SUBJ_800164070",
+    "counterparty_id": "CPTY_8005600C0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 12,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 320026.01,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7284.92,
+      "max_historical_tx_amount": 11771.83,
+      "avg_monthly_tx_count": 27,
+      "spike_multiplier": 43.93
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 145.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0009",
+    "timestamp": "2022/09/01 11:32",
+    "subject_id": "SUBJ_8020543A0",
+    "counterparty_id": "CPTY_8018DC000",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 47,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 301756.47,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5177.44,
+      "max_historical_tx_amount": 9718.43,
+      "avg_monthly_tx_count": 28,
+      "spike_multiplier": 58.28
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 1.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0010",
+    "timestamp": "2022/09/01 03:05",
+    "subject_id": "SUBJ_800178CC0",
+    "counterparty_id": "CPTY_800283B60",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 53,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 259094.85,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7501.61,
+      "max_historical_tx_amount": 12312.14,
+      "avg_monthly_tx_count": 27,
+      "spike_multiplier": 34.54
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 0.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0011",
+    "timestamp": "2022/09/02 08:55",
+    "subject_id": "SUBJ_812D0C600",
+    "counterparty_id": "CPTY_812D0C3C0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 7,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 232359.48,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8313.23,
+      "max_historical_tx_amount": 16410.76,
+      "avg_monthly_tx_count": 19,
+      "spike_multiplier": 27.95
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 0.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0012",
+    "timestamp": "2022/09/01 04:02",
+    "subject_id": "SUBJ_80E7A2B80",
+    "counterparty_id": "CPTY_80E7A2C70",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 65,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 339166.85,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5996.54,
+      "max_historical_tx_amount": 16571.45,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 56.56
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 2.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0013",
+    "timestamp": "2022/09/01 00:08",
+    "subject_id": "SUBJ_80014F510",
+    "counterparty_id": "CPTY_801A199F0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 65,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 214919.91,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9594.3,
+      "max_historical_tx_amount": 23724.08,
+      "avg_monthly_tx_count": 28,
+      "spike_multiplier": 22.4
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 135.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0014",
+    "timestamp": "2022/09/02 16:43",
+    "subject_id": "SUBJ_80211F620",
+    "counterparty_id": "CPTY_8019C6830",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 27,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 280795.05,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6677.85,
+      "max_historical_tx_amount": 13799.19,
+      "avg_monthly_tx_count": 31,
+      "spike_multiplier": 42.05
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 5.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0015",
+    "timestamp": "2022/09/01 00:18",
+    "subject_id": "SUBJ_8003C4330",
+    "counterparty_id": "CPTY_8004D85F0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 18,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 222574.94,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6830.25,
+      "max_historical_tx_amount": 13231.02,
+      "avg_monthly_tx_count": 26,
+      "spike_multiplier": 32.59
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 114.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0016",
+    "timestamp": "2022/09/01 15:05",
+    "subject_id": "SUBJ_80195DE20",
+    "counterparty_id": "CPTY_801E2BC20",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 11,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 314747.74,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5901.54,
+      "max_historical_tx_amount": 9553.2,
+      "avg_monthly_tx_count": 22,
+      "spike_multiplier": 53.33
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 5.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0017",
+    "timestamp": "2022/09/01 00:16",
+    "subject_id": "SUBJ_800451140",
+    "counterparty_id": "CPTY_800574B50",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 38,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 305855.93,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5126.78,
+      "max_historical_tx_amount": 13219.68,
+      "avg_monthly_tx_count": 30,
+      "spike_multiplier": 59.66
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 132.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0018",
+    "timestamp": "2022/09/01 00:08",
+    "subject_id": "SUBJ_80100DB80",
+    "counterparty_id": "CPTY_80A059840",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 31,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 297057.25,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8840.66,
+      "max_historical_tx_amount": 14930.58,
+      "avg_monthly_tx_count": 20,
+      "spike_multiplier": 33.6
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 79.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0019",
+    "timestamp": "2022/09/03 09:29",
+    "subject_id": "SUBJ_800737690",
+    "counterparty_id": "CPTY_800AAF0B0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 26,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 215929.88,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9286.05,
+      "max_historical_tx_amount": 21803.25,
+      "avg_monthly_tx_count": 15,
+      "spike_multiplier": 23.25
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 2.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0020",
+    "timestamp": "2022/09/01 18:17",
+    "subject_id": "SUBJ_807A61380",
+    "counterparty_id": "CPTY_802D53D80",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 38,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 295083.39,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8343.88,
+      "max_historical_tx_amount": 20017.86,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 35.37
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 0.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0021",
+    "timestamp": "2022/09/01 09:22",
+    "subject_id": "SUBJ_80F6B88B0",
+    "counterparty_id": "CPTY_8064545E0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 8,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 325941.42,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7390.24,
+      "max_historical_tx_amount": 12884.98,
+      "avg_monthly_tx_count": 27,
+      "spike_multiplier": 44.1
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 6,
+      "funds_retention_hours": 0.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0022",
+    "timestamp": "2022/09/01 00:23",
+    "subject_id": "SUBJ_80018EE40",
+    "counterparty_id": "CPTY_800194520",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 18,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 207903.3,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7822.19,
+      "max_historical_tx_amount": 19752.29,
+      "avg_monthly_tx_count": 20,
+      "spike_multiplier": 26.58
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 74.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0023",
+    "timestamp": "2022/09/01 01:52",
+    "subject_id": "SUBJ_1004286A8",
+    "counterparty_id": "CPTY_80DA92320",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 55,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 206588.66,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5637.82,
+      "max_historical_tx_amount": 11992.79,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 36.64
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 1.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0024",
+    "timestamp": "2022/09/02 08:17",
+    "subject_id": "SUBJ_800DD9900",
+    "counterparty_id": "CPTY_8006F0580",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 18,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 238396.67,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7831.89,
+      "max_historical_tx_amount": 19067.67,
+      "avg_monthly_tx_count": 18,
+      "spike_multiplier": 30.44
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 3.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0025",
+    "timestamp": "2022/09/01 00:28",
+    "subject_id": "SUBJ_80025AF90",
+    "counterparty_id": "CPTY_8004E7AF0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 31,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 244303.71,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8764.42,
+      "max_historical_tx_amount": 16429.41,
+      "avg_monthly_tx_count": 20,
+      "spike_multiplier": 27.87
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 57.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0026",
+    "timestamp": "2022/09/02 13:57",
+    "subject_id": "SUBJ_80A2953E0",
+    "counterparty_id": "CPTY_8021309A0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 31,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 329233.25,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9609.03,
+      "max_historical_tx_amount": 24692.75,
+      "avg_monthly_tx_count": 34,
+      "spike_multiplier": 34.26
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 10,
+      "funds_retention_hours": 0.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0027",
+    "timestamp": "2022/09/01 01:56",
+    "subject_id": "SUBJ_80FC38120",
+    "counterparty_id": "CPTY_80FC385D0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 65,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 249354.37,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6159.44,
+      "max_historical_tx_amount": 12933.67,
+      "avg_monthly_tx_count": 24,
+      "spike_multiplier": 40.48
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 2.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0028",
+    "timestamp": "2022/09/01 00:12",
+    "subject_id": "SUBJ_8002BB390",
+    "counterparty_id": "CPTY_8004BF330",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 6,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 253475.05,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5633.75,
+      "max_historical_tx_amount": 10554.96,
+      "avg_monthly_tx_count": 33,
+      "spike_multiplier": 44.99
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 83.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0029",
+    "timestamp": "2022/09/04 16:18",
+    "subject_id": "SUBJ_80F1AF380",
+    "counterparty_id": "CPTY_8023ED8B0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 54,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 272785.18,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5133.72,
+      "max_historical_tx_amount": 11360.39,
+      "avg_monthly_tx_count": 22,
+      "spike_multiplier": 53.14
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 8,
+      "funds_retention_hours": 0.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0030",
+    "timestamp": "2022/09/01 00:26",
+    "subject_id": "SUBJ_8003430A0",
+    "counterparty_id": "CPTY_8004B5AB0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 55,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 233939.58,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6406.65,
+      "max_historical_tx_amount": 12127.47,
+      "avg_monthly_tx_count": 35,
+      "spike_multiplier": 36.52
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 39.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0031",
+    "timestamp": "2022/09/02 11:44",
+    "subject_id": "SUBJ_800119810",
+    "counterparty_id": "CPTY_80010D740",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 42,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 238043.91,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6863.6,
+      "max_historical_tx_amount": 18985.67,
+      "avg_monthly_tx_count": 33,
+      "spike_multiplier": 34.68
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 8,
+      "funds_retention_hours": 0.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0032",
+    "timestamp": "2022/09/01 00:33",
+    "subject_id": "SUBJ_100428978",
+    "counterparty_id": "CPTY_80F1D73F0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 62,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 347670.11,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7511.66,
+      "max_historical_tx_amount": 14730.77,
+      "avg_monthly_tx_count": 30,
+      "spike_multiplier": 46.28
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 1.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0033",
+    "timestamp": "2022/09/01 00:14",
+    "subject_id": "SUBJ_800531BF0",
+    "counterparty_id": "CPTY_8005315D0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 4,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 206825.41,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8056.39,
+      "max_historical_tx_amount": 17749.96,
+      "avg_monthly_tx_count": 35,
+      "spike_multiplier": 25.67
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 77.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0034",
+    "timestamp": "2022/09/01 00:33",
+    "subject_id": "SUBJ_811B12170",
+    "counterparty_id": "CPTY_811B121C0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 35,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 267376.34,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6261.88,
+      "max_historical_tx_amount": 11107.79,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 42.7
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 4.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0035",
+    "timestamp": "2022/09/01 00:08",
+    "subject_id": "SUBJ_800254D60",
+    "counterparty_id": "CPTY_800EEECD0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 41,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 236695.08,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7974.58,
+      "max_historical_tx_amount": 13533.05,
+      "avg_monthly_tx_count": 37,
+      "spike_multiplier": 29.68
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 91.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0036",
+    "timestamp": "2022/09/02 15:40",
+    "subject_id": "SUBJ_800737690",
+    "counterparty_id": "CPTY_8002CC310",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 19,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 260228.37,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6883.75,
+      "max_historical_tx_amount": 16237.16,
+      "avg_monthly_tx_count": 19,
+      "spike_multiplier": 37.8
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 1.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0037",
+    "timestamp": "2022/09/01 00:11",
+    "subject_id": "SUBJ_800473270",
+    "counterparty_id": "CPTY_80855BD50",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 6,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 303588.67,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9151.22,
+      "max_historical_tx_amount": 18164.59,
+      "avg_monthly_tx_count": 19,
+      "spike_multiplier": 33.17
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 35.0,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0038",
+    "timestamp": "2022/09/01 00:13",
+    "subject_id": "SUBJ_80049EB50",
+    "counterparty_id": "CPTY_80049EBA0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 22,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 305827.83,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7965.83,
+      "max_historical_tx_amount": 19222.16,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 38.39
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 66.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0039",
+    "timestamp": "2022/09/01 03:53",
+    "subject_id": "SUBJ_811FFF630",
+    "counterparty_id": "CPTY_812D0C3C0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 42,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 302876.91,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6791.03,
+      "max_historical_tx_amount": 11649.41,
+      "avg_monthly_tx_count": 22,
+      "spike_multiplier": 44.6
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 8,
+      "funds_retention_hours": 0.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0040",
+    "timestamp": "2022/09/02 07:42",
+    "subject_id": "SUBJ_800202780",
+    "counterparty_id": "CPTY_800119810",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 45,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 337005.27,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9643.14,
+      "max_historical_tx_amount": 17020.38,
+      "avg_monthly_tx_count": 31,
+      "spike_multiplier": 34.95
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 9,
+      "funds_retention_hours": 0.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0041",
+    "timestamp": "2022/09/01 06:02",
+    "subject_id": "SUBJ_802958DB0",
+    "counterparty_id": "CPTY_810E1A430",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 63,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 283059.32,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6351.02,
+      "max_historical_tx_amount": 15191.52,
+      "avg_monthly_tx_count": 29,
+      "spike_multiplier": 44.57
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 4.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0042",
+    "timestamp": "2022/09/06 19:16",
+    "subject_id": "SUBJ_80F390FC0",
+    "counterparty_id": "CPTY_80E0D4970",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 35,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 283510.84,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6365.02,
+      "max_historical_tx_amount": 17793.44,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 44.54
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 1.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0043",
+    "timestamp": "2022/09/02 21:23",
+    "subject_id": "SUBJ_800737690",
+    "counterparty_id": "CPTY_8004030A0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 6,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 304252.24,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8170.54,
+      "max_historical_tx_amount": 16396.93,
+      "avg_monthly_tx_count": 16,
+      "spike_multiplier": 37.24
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 1.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0044",
+    "timestamp": "2022/09/01 00:22",
+    "subject_id": "SUBJ_800418BD0",
+    "counterparty_id": "CPTY_8004110B0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 39,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 295736.62,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9253.17,
+      "max_historical_tx_amount": 19296.65,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 31.96
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 102.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0045",
+    "timestamp": "2022/09/03 14:22",
+    "subject_id": "SUBJ_800737690",
+    "counterparty_id": "CPTY_8006FB970",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 28,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 256353.28,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9457.99,
+      "max_historical_tx_amount": 22015.5,
+      "avg_monthly_tx_count": 16,
+      "spike_multiplier": 27.1
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 2.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0046",
+    "timestamp": "2022/09/01 00:41",
+    "subject_id": "SUBJ_100428660",
+    "counterparty_id": "CPTY_805B66DC0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 38,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 272899.61,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5124.55,
+      "max_historical_tx_amount": 9188.16,
+      "avg_monthly_tx_count": 31,
+      "spike_multiplier": 53.25
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 3.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0047",
+    "timestamp": "2022/09/01 00:06",
+    "subject_id": "SUBJ_8001072B0",
+    "counterparty_id": "CPTY_800570F70",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 17,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 204639.0,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8262.01,
+      "max_historical_tx_amount": 15442.71,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 24.77
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 84.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0048",
+    "timestamp": "2022/09/04 01:34",
+    "subject_id": "SUBJ_80EA93ED0",
+    "counterparty_id": "CPTY_8079EC940",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 20,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 325986.62,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6678.19,
+      "max_historical_tx_amount": 16667.36,
+      "avg_monthly_tx_count": 21,
+      "spike_multiplier": 48.81
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 2.0,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0049",
+    "timestamp": "2022/09/01 00:22",
+    "subject_id": "SUBJ_800456A50",
+    "counterparty_id": "CPTY_80855BD50",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 25,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 294904.56,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6594.09,
+      "max_historical_tx_amount": 14843.61,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 44.72
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 112.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0050",
+    "timestamp": "2022/09/01 03:24",
+    "subject_id": "SUBJ_100428738",
+    "counterparty_id": "CPTY_803CD14B0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 11,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 273064.35,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6283.35,
+      "max_historical_tx_amount": 17389.88,
+      "avg_monthly_tx_count": 26,
+      "spike_multiplier": 43.46
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 4.0,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0051",
+    "timestamp": "2022/09/04 01:29",
+    "subject_id": "SUBJ_802D53D80",
+    "counterparty_id": "CPTY_80EE2B9B0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 67,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 286227.97,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8161.02,
+      "max_historical_tx_amount": 20841.4,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 35.07
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 0.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0052",
+    "timestamp": "2022/09/02 07:37",
+    "subject_id": "SUBJ_80B3E96E0",
+    "counterparty_id": "CPTY_801F8CCB0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 38,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 242992.76,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9291.21,
+      "max_historical_tx_amount": 17432.38,
+      "avg_monthly_tx_count": 29,
+      "spike_multiplier": 26.15
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 11,
+      "funds_retention_hours": 0.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0053",
+    "timestamp": "2022/09/04 04:56",
+    "subject_id": "SUBJ_81114D580",
+    "counterparty_id": "CPTY_809BD8BC0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 49,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 339306.95,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8827.49,
+      "max_historical_tx_amount": 14585.88,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 38.44
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 0.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0054",
+    "timestamp": "2022/09/02 13:49",
+    "subject_id": "SUBJ_8083E2D60",
+    "counterparty_id": "CPTY_811DFB6B0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 49,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 341148.49,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9537.09,
+      "max_historical_tx_amount": 19495.63,
+      "avg_monthly_tx_count": 22,
+      "spike_multiplier": 35.77
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 1.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0055",
+    "timestamp": "2022/09/01 01:50",
+    "subject_id": "SUBJ_80EF0F190",
+    "counterparty_id": "CPTY_80F5B71F0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 35,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 213000.55,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9788.28,
+      "max_historical_tx_amount": 26979.87,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 21.76
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 11,
+      "funds_retention_hours": 0.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0056",
+    "timestamp": "2022/09/01 00:15",
+    "subject_id": "SUBJ_8004169A0",
+    "counterparty_id": "CPTY_8139B5370",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 57,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 283292.98,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9228.01,
+      "max_historical_tx_amount": 18274.29,
+      "avg_monthly_tx_count": 31,
+      "spike_multiplier": 30.7
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 71.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0057",
+    "timestamp": "2022/09/01 04:33",
+    "subject_id": "SUBJ_800737690",
+    "counterparty_id": "CPTY_80020C5B0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 50,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 232502.13,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8475.74,
+      "max_historical_tx_amount": 19359.21,
+      "avg_monthly_tx_count": 37,
+      "spike_multiplier": 27.43
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 2.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0058",
+    "timestamp": "2022/09/01 00:08",
+    "subject_id": "SUBJ_80018A1A0",
+    "counterparty_id": "CPTY_80019AE30",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 20,
+    "payment_channel": "SWIFT",
+    "currency": "INR",
+    "transaction_amount": 330096.47,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9901.76,
+      "max_historical_tx_amount": 17507.31,
+      "avg_monthly_tx_count": 23,
+      "spike_multiplier": 33.34
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 159.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0059",
+    "timestamp": "2022/09/01 16:58",
+    "subject_id": "SUBJ_80D179410",
+    "counterparty_id": "CPTY_80A976860",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 45,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 254485.71,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9216.05,
+      "max_historical_tx_amount": 16256.61,
+      "avg_monthly_tx_count": 35,
+      "spike_multiplier": 27.61
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 2.0,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0060",
+    "timestamp": "2022/09/01 00:05",
+    "subject_id": "SUBJ_80042BC80",
+    "counterparty_id": "CPTY_8004267A0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 10,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 335333.12,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9025.4,
+      "max_historical_tx_amount": 23214.56,
+      "avg_monthly_tx_count": 37,
+      "spike_multiplier": 37.15
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 167.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0061",
+    "timestamp": "2022/09/02 05:02",
+    "subject_id": "SUBJ_80F1AF380",
+    "counterparty_id": "CPTY_811F9C580",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 19,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 212357.37,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7532.35,
+      "max_historical_tx_amount": 19267.41,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 28.19
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 3.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0062",
+    "timestamp": "2022/09/01 00:11",
+    "subject_id": "SUBJ_800059840",
+    "counterparty_id": "CPTY_800115570",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 69,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 256835.11,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5346.23,
+      "max_historical_tx_amount": 14242.04,
+      "avg_monthly_tx_count": 28,
+      "spike_multiplier": 48.04
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 77.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0063",
+    "timestamp": "2022/09/03 18:53",
+    "subject_id": "SUBJ_80F1AF380",
+    "counterparty_id": "CPTY_805F9C820",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 66,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 269977.31,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7226.6,
+      "max_historical_tx_amount": 17390.32,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 37.36
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 0.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0064",
+    "timestamp": "2022/09/01 17:25",
+    "subject_id": "SUBJ_80399CED0",
+    "counterparty_id": "CPTY_80F390FC0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 45,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 238536.7,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9861.93,
+      "max_historical_tx_amount": 25707.29,
+      "avg_monthly_tx_count": 35,
+      "spike_multiplier": 24.19
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 3.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0065",
+    "timestamp": "2022/09/02 12:29",
+    "subject_id": "SUBJ_80FD27570",
+    "counterparty_id": "CPTY_8090E8EB0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 56,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 278247.52,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9089.61,
+      "max_historical_tx_amount": 18472.17,
+      "avg_monthly_tx_count": 18,
+      "spike_multiplier": 30.61
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 1.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0066",
+    "timestamp": "2022/09/01 00:03",
+    "subject_id": "SUBJ_8001DDC00",
+    "counterparty_id": "CPTY_8001DDB60",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 50,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 214460.73,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6416.98,
+      "max_historical_tx_amount": 17699.97,
+      "avg_monthly_tx_count": 20,
+      "spike_multiplier": 33.42
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 28.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0067",
+    "timestamp": "2022/09/01 19:00",
+    "subject_id": "SUBJ_8010647D0",
+    "counterparty_id": "CPTY_801CFFF90",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 33,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 344474.4,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8492.63,
+      "max_historical_tx_amount": 14998.19,
+      "avg_monthly_tx_count": 29,
+      "spike_multiplier": 40.56
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 0.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0068",
+    "timestamp": "2022/09/01 00:04",
+    "subject_id": "SUBJ_800113F90",
+    "counterparty_id": "CPTY_8001294B0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 58,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 266089.83,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5299.18,
+      "max_historical_tx_amount": 11014.8,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 50.21
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 72.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0069",
+    "timestamp": "2022/09/01 00:08",
+    "subject_id": "SUBJ_80011D000",
+    "counterparty_id": "CPTY_8001357F0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 15,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 264533.91,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6316.67,
+      "max_historical_tx_amount": 11503.92,
+      "avg_monthly_tx_count": 36,
+      "spike_multiplier": 41.88
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 76.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0070",
+    "timestamp": "2022/09/01 00:23",
+    "subject_id": "SUBJ_80010C2F0",
+    "counterparty_id": "CPTY_80012A760",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 51,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 266583.43,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7083.42,
+      "max_historical_tx_amount": 12806.49,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 37.63
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 142.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0071",
+    "timestamp": "2022/09/01 00:00",
+    "subject_id": "SUBJ_8004B9580",
+    "counterparty_id": "CPTY_8004B9670",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 67,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 341410.33,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5986.9,
+      "max_historical_tx_amount": 16293.57,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 57.03
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 59.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0072",
+    "timestamp": "2022/09/03 05:06",
+    "subject_id": "SUBJ_801C0F2B0",
+    "counterparty_id": "CPTY_80C1B9E20",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 29,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 208966.55,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7788.62,
+      "max_historical_tx_amount": 18179.14,
+      "avg_monthly_tx_count": 36,
+      "spike_multiplier": 26.83
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 2.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0073",
+    "timestamp": "2022/09/01 00:06",
+    "subject_id": "SUBJ_100428858",
+    "counterparty_id": "CPTY_8090A6540",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 50,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 215402.66,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6826.47,
+      "max_historical_tx_amount": 17130.45,
+      "avg_monthly_tx_count": 27,
+      "spike_multiplier": 31.55
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 8,
+      "funds_retention_hours": 0.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0074",
+    "timestamp": "2022/09/01 03:07",
+    "subject_id": "SUBJ_100428780",
+    "counterparty_id": "CPTY_805954BD0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 19,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 227598.22,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5297.53,
+      "max_historical_tx_amount": 13914.24,
+      "avg_monthly_tx_count": 33,
+      "spike_multiplier": 42.96
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 0.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0075",
+    "timestamp": "2022/09/01 00:01",
+    "subject_id": "SUBJ_800174E90",
+    "counterparty_id": "CPTY_800324010",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 26,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 252560.43,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5574.5,
+      "max_historical_tx_amount": 12207.82,
+      "avg_monthly_tx_count": 20,
+      "spike_multiplier": 45.31
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 77.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0076",
+    "timestamp": "2022/09/01 05:44",
+    "subject_id": "SUBJ_80F1AF380",
+    "counterparty_id": "CPTY_80D210C20",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 13,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 208614.39,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5333.09,
+      "max_historical_tx_amount": 14607.2,
+      "avg_monthly_tx_count": 17,
+      "spike_multiplier": 39.12
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 1.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0077",
+    "timestamp": "2022/09/01 00:01",
+    "subject_id": "SUBJ_100428660",
+    "counterparty_id": "CPTY_800487250",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 7,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 280749.11,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8135.42,
+      "max_historical_tx_amount": 17928.54,
+      "avg_monthly_tx_count": 14,
+      "spike_multiplier": 34.51
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 81.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0078",
+    "timestamp": "2022/09/01 00:23",
+    "subject_id": "SUBJ_812EE86F0",
+    "counterparty_id": "CPTY_812EE89C0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 35,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 205870.65,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8086.88,
+      "max_historical_tx_amount": 22098.77,
+      "avg_monthly_tx_count": 15,
+      "spike_multiplier": 25.46
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 1.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0079",
+    "timestamp": "2022/09/01 00:21",
+    "subject_id": "SUBJ_8000EDEC0",
+    "counterparty_id": "CPTY_80AEF5310",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 36,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 285711.59,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9660.12,
+      "max_historical_tx_amount": 22127.17,
+      "avg_monthly_tx_count": 31,
+      "spike_multiplier": 29.58
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 71.0,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0080",
+    "timestamp": "2022/09/01 00:04",
+    "subject_id": "SUBJ_811C597B0",
+    "counterparty_id": "CPTY_811C599A0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 68,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 293387.19,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7322.53,
+      "max_historical_tx_amount": 16510.4,
+      "avg_monthly_tx_count": 18,
+      "spike_multiplier": 40.07
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 5.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0081",
+    "timestamp": "2022/09/01 00:07",
+    "subject_id": "SUBJ_80018DBD0",
+    "counterparty_id": "CPTY_800256410",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 15,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 241998.32,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9761.77,
+      "max_historical_tx_amount": 26224.22,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 24.79
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 53.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0082",
+    "timestamp": "2022/09/01 00:27",
+    "subject_id": "SUBJ_800043C00",
+    "counterparty_id": "CPTY_8001409E0",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 11,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 292265.07,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5588.77,
+      "max_historical_tx_amount": 9064.24,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 52.3
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 151.8,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0083",
+    "timestamp": "2022/09/02 01:10",
+    "subject_id": "SUBJ_8102394B0",
+    "counterparty_id": "CPTY_810DF3480",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 10,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 240061.4,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6969.17,
+      "max_historical_tx_amount": 16851.01,
+      "avg_monthly_tx_count": 15,
+      "spike_multiplier": 34.45
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 1.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0084",
+    "timestamp": "2022/09/01 15:25",
+    "subject_id": "SUBJ_8012E62B0",
+    "counterparty_id": "CPTY_80F390FC0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 39,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 338750.63,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5673.1,
+      "max_historical_tx_amount": 13820.15,
+      "avg_monthly_tx_count": 26,
+      "spike_multiplier": 59.71
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 0.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0085",
+    "timestamp": "2022/09/01 07:15",
+    "subject_id": "SUBJ_801ABC430",
+    "counterparty_id": "CPTY_80F390FC0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 27,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 227906.17,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7127.04,
+      "max_historical_tx_amount": 19678.45,
+      "avg_monthly_tx_count": 17,
+      "spike_multiplier": 31.98
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 7,
+      "funds_retention_hours": 0.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0086",
+    "timestamp": "2022/09/01 11:28",
+    "subject_id": "SUBJ_800737690",
+    "counterparty_id": "CPTY_80093C0D0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 27,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 220642.7,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9013.15,
+      "max_historical_tx_amount": 25134.13,
+      "avg_monthly_tx_count": 29,
+      "spike_multiplier": 24.48
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 4,
+      "funds_retention_hours": 4.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0087",
+    "timestamp": "2022/09/01 00:12",
+    "subject_id": "SUBJ_1004286A8",
+    "counterparty_id": "CPTY_80D9B69A0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 16,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 264633.13,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9305.52,
+      "max_historical_tx_amount": 21162.99,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 28.44
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 6,
+      "funds_retention_hours": 0.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0088",
+    "timestamp": "2022/09/03 09:30",
+    "subject_id": "SUBJ_8001B0FA0",
+    "counterparty_id": "CPTY_8002A0E00",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 16,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 280011.81,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8688.56,
+      "max_historical_tx_amount": 16385.61,
+      "avg_monthly_tx_count": 30,
+      "spike_multiplier": 32.23
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 3,
+      "funds_retention_hours": 1.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0089",
+    "timestamp": "2022/09/01 01:53",
+    "subject_id": "SUBJ_806B9FA20",
+    "counterparty_id": "CPTY_806C5E8E0",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 22,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 341947.06,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9443.29,
+      "max_historical_tx_amount": 19519.68,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 36.21
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 4.7,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0090",
+    "timestamp": "2022/09/01 00:23",
+    "subject_id": "SUBJ_800336B70",
+    "counterparty_id": "CPTY_8091CF1C0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 55,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 300808.41,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5542.74,
+      "max_historical_tx_amount": 10992.23,
+      "avg_monthly_tx_count": 27,
+      "spike_multiplier": 54.27
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 66.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0091",
+    "timestamp": "2022/09/01 00:17",
+    "subject_id": "SUBJ_800411470",
+    "counterparty_id": "CPTY_802C423C0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 15,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 215388.81,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7881.17,
+      "max_historical_tx_amount": 18585.41,
+      "avg_monthly_tx_count": 34,
+      "spike_multiplier": 27.33
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 93.2,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0092",
+    "timestamp": "2022/09/01 00:19",
+    "subject_id": "SUBJ_800457A50",
+    "counterparty_id": "CPTY_800455C30",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 19,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 340144.4,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6694.02,
+      "max_historical_tx_amount": 16112.65,
+      "avg_monthly_tx_count": 17,
+      "spike_multiplier": 50.81
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 28.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0093",
+    "timestamp": "2022/09/01 00:09",
+    "subject_id": "SUBJ_800473570",
+    "counterparty_id": "CPTY_8005795A0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 17,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 344240.24,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8929.65,
+      "max_historical_tx_amount": 15264.77,
+      "avg_monthly_tx_count": 23,
+      "spike_multiplier": 38.55
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 53.1,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0094",
+    "timestamp": "2022/09/01 00:24",
+    "subject_id": "SUBJ_800336AD0",
+    "counterparty_id": "CPTY_8003D7DF0",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 21,
+    "payment_channel": "RTGS",
+    "currency": "INR",
+    "transaction_amount": 281703.7,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7765.22,
+      "max_historical_tx_amount": 16538.65,
+      "avg_monthly_tx_count": 36,
+      "spike_multiplier": 36.28
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 68.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0095",
+    "timestamp": "2022/09/02 08:44",
+    "subject_id": "SUBJ_80F025640",
+    "counterparty_id": "CPTY_80FD27570",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 10,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 328562.83,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9797.96,
+      "max_historical_tx_amount": 23766.28,
+      "avg_monthly_tx_count": 25,
+      "spike_multiplier": 33.53
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RAPID_PASS_THROUGH_LAYERING",
+      "counterparty_relationship": "UNLINKED_HIGH_VELOCITY_NODE",
+      "velocity_24h_tx_count": 10,
+      "funds_retention_hours": 0.6,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0096",
+    "timestamp": "2022/09/01 00:23",
+    "subject_id": "SUBJ_8004586D0",
+    "counterparty_id": "CPTY_80B73BA00",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 69,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 321991.57,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 7166.54,
+      "max_historical_tx_amount": 13380.59,
+      "avg_monthly_tx_count": 22,
+      "spike_multiplier": 44.93
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 72.5,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0097",
+    "timestamp": "2022/09/01 00:09",
+    "subject_id": "SUBJ_8002ED790",
+    "counterparty_id": "CPTY_8002ED740",
+    "ibm_source_flag": 0,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 68,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 286870.59,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 5494.54,
+      "max_historical_tx_amount": 9350.64,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 52.21
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "PROPERTY_OR_TAX_REFUND_CREDIT",
+      "counterparty_relationship": "VERIFIED_INSTITUTIONAL_SOURCE",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 79.9,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0098",
+    "timestamp": "2022/09/03 18:35",
+    "subject_id": "SUBJ_80BE74FC0",
+    "counterparty_id": "CPTY_80EA93ED0",
+    "ibm_source_flag": 1,
+    "account_type": "RETAIL_SAVINGS",
+    "account_tenure_months": 7,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 345956.16,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 9369.75,
+      "max_historical_tx_amount": 17652.82,
+      "avg_monthly_tx_count": 20,
+      "spike_multiplier": 36.92
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "SUDDEN_SPIKE_NEW_COUNTERPARTY",
+      "counterparty_relationship": "NEW_FIRST_TIME_COUNTERPARTY",
+      "velocity_24h_tx_count": 5,
+      "funds_retention_hours": 1.3,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  },
+  {
+    "alert_id": "ALT-2026-0099",
+    "timestamp": "2022/09/01 00:27",
+    "subject_id": "SUBJ_800443850",
+    "counterparty_id": "CPTY_802C6BE90",
+    "ibm_source_flag": 0,
+    "account_type": "SME_CURRENT",
+    "account_tenure_months": 57,
+    "payment_channel": "IMPS",
+    "currency": "INR",
+    "transaction_amount": 315463.45,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 6798.56,
+      "max_historical_tx_amount": 16655.23,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 46.4
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "RECURRING_B2B_VENDOR_SETTLEMENT",
+      "counterparty_relationship": "KNOWN_RECURRING_VENDOR_12M",
+      "velocity_24h_tx_count": 1,
+      "funds_retention_hours": 57.0,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "BENIGN_FALSE_POSITIVE"
+  },
+  {
+    "alert_id": "ALT-2026-0100",
+    "timestamp": "2022/09/02 05:42",
+    "subject_id": "SUBJ_8001A6140",
+    "counterparty_id": "CPTY_800202780",
+    "ibm_source_flag": 1,
+    "account_type": "FREELANCE_CURRENT",
+    "account_tenure_months": 70,
+    "payment_channel": "NEFT",
+    "currency": "INR",
+    "transaction_amount": 218234.83,
+    "baseline_12m": {
+      "avg_daily_tx_amount": 8519.66,
+      "max_historical_tx_amount": 16174.31,
+      "avg_monthly_tx_count": 32,
+      "spike_multiplier": 25.62
+    },
+    "behavioral_signals": {
+      "scenario_archetype": "DORMANT_ACCOUNT_HIGH_VALUE_BURST",
+      "counterparty_relationship": "CROSS_BORDER_NEW_ENTITY",
+      "velocity_24h_tx_count": 2,
+      "funds_retention_hours": 1.4,
+      "triggered_rule": "RULE_HIGH_VALUE_BASELINE_DEVIATION"
+    },
+    "ground_truth_label": "ANOMALY_ESCALATE"
+  }
+]

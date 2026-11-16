@@ -1,0 +1,15 @@
+# Secrets & Virtual Environments
+.env
+.venv/
+venv/
+
+# Large Raw Datasets & Local Audit Logs
+data/raw/*.csv
+data/raw/*.zip
+data/audit_logs/*.jsonl
+
+# Python Cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store

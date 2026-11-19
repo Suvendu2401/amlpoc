@@ -1,8 +1,9 @@
 import json
 from typing import Literal
-from openai import OpenAI
+from google import genai
+from google.genai import types
 from pydantic import BaseModel, Field
-from src.config import LLM_MODEL, OPENAI_API_KEY
+from src.config import GEMINI_API_KEY, LLM_MODEL
 from src.mock_enricher import EnrichedAlert
 
 
@@ -12,7 +13,7 @@ class TriageDossier(BaseModel):
     confidence_score: float = Field(..., ge=0.0, le=1.0)
     reasoning_summary: str
     compliance_draft: str
-    generation_mode: Literal["OPENAI_LIVE", "DETERMINISTIC_FALLBACK"]
+    generation_mode: Literal["GEMINI_LIVE", "DETERMINISTIC_FALLBACK"]
 
 
 SYSTEM_PROMPT = """You are a senior AML/KYC financial crime investigator assistant.
@@ -27,7 +28,6 @@ Evaluate the enriched transaction alert (strictly Zero-PII surrogate IDs) and re
 
 
 def _build_zero_pii_payload(enriched: EnrichedAlert) -> dict:
-    """Constructs a strictly non-PII context dictionary for LLM synthesis."""
     a = enriched.alert
     return {
         "alert_id": a.alert_id,
@@ -58,7 +58,6 @@ def _build_zero_pii_payload(enriched: EnrichedAlert) -> dict:
 
 
 def _generate_fallback_dossier(enriched: EnrichedAlert) -> TriageDossier:
-    """Offline deterministic template fallback when OPENAI_API_KEY is unset or unreachable."""
     a = enriched.alert
     is_high_risk = enriched.rule_risk_tier == "HIGH"
 
@@ -121,27 +120,28 @@ def _generate_fallback_dossier(enriched: EnrichedAlert) -> TriageDossier:
 def synthesize_triage_dossier(
     enriched: EnrichedAlert, use_live_llm: bool = True
 ) -> TriageDossier:
-    """Generates a structured AI triage dossier via OpenAI, falling back cleanly if offline."""
-    has_valid_key = bool(OPENAI_API_KEY) and OPENAI_API_KEY != "your_api_key_here"
+    """Generates a structured AI triage dossier via Gemini for flagged alerts, with offline fallback."""
+    has_valid_key = bool(GEMINI_API_KEY) and GEMINI_API_KEY != "your_gemini_api_key_here"
+    is_flagged = enriched.rule_risk_tier in {"HIGH", "MEDIUM"}
 
-    if not use_live_llm or not has_valid_key:
+    if not use_live_llm or not has_valid_key or not is_flagged:
         return _generate_fallback_dossier(enriched)
 
     try:
-        client = OpenAI(api_key=OPENAI_API_KEY)
+        client = genai.Client(api_key=GEMINI_API_KEY)
         payload = _build_zero_pii_payload(enriched)
 
-        response = client.chat.completions.create(
+        response = client.models.generate_content(
             model=LLM_MODEL,
-            temperature=0.2,
-            response_format={"type": "json_object"},
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": json.dumps(payload, indent=2)},
-            ],
+            contents=json.dumps(payload, indent=2),
+            config=types.GenerateContentConfig(
+                system_instruction=SYSTEM_PROMPT,
+                temperature=0.2,
+                response_mime_type="application/json",
+            ),
         )
 
-        raw_json = response.choices[0].message.content or "{}"
+        raw_json = response.text or "{}"
         parsed = json.loads(raw_json)
 
         return TriageDossier(
@@ -150,7 +150,7 @@ def synthesize_triage_dossier(
             confidence_score=float(parsed["confidence_score"]),
             reasoning_summary=parsed["reasoning_summary"],
             compliance_draft=parsed["compliance_draft"],
-            generation_mode="OPENAI_LIVE",
+            generation_mode="GEMINI_LIVE",
         )
     except Exception:
         return _generate_fallback_dossier(enriched)

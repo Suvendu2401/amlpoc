@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime, timezone
 import pandas as pd
 import streamlit as st
@@ -56,7 +57,8 @@ enriched_queue = get_enriched_queue()
 # --- Sidebar Controls ---
 st.sidebar.title("Triage Queue Controls")
 
-has_api_key = bool(GEMINI_API_KEY) and GEMINI_API_KEY != "your_gemini_api_key_here"
+active_key = os.getenv("GEMINI_API_KEY", "") or GEMINI_API_KEY
+has_api_key = bool(active_key) and active_key != "your_gemini_api_key_here"
 use_live_llm = st.sidebar.checkbox(
     "Use Live Gemini Synthesis",
     value=has_api_key,
@@ -94,9 +96,9 @@ st.sidebar.metric("Queue Progress", f"{completed_count} / {len(enriched_queue)} 
 
 # --- Header ---
 st.title("AML/KYC Alert Triage & SAR Synthesis Engine")
-st.caption("Zero-PII Surrogate Pipeline • Deterministic Risk Scoring + Gemini Explanation Layer")
+st.caption("Zero-PII Surrogate Pipeline • Behavioral Risk Scoring & Gemini 2.5 Flash Synthesis")
 
-tab_queue, tab_single = st.tabs(["1. Alert Triage Queue", "2. Single Transaction Simulator"])
+tab_queue, tab_sim = st.tabs(["Alert Triage Queue", "Single Transaction Simulator"])
 
 with tab_queue:
     if not filtered_items:
@@ -167,7 +169,7 @@ with tab_queue:
                 ],
                 columns=["Attribute", "Value"],
             )
-            st.dataframe(meta_df, hide_index=True, width="stretch")
+            st.dataframe(meta_df, hide_index=True, use_container_width=True)
 
             st.markdown("**Detected Red Flags**")
             if selected_enriched.red_flags:
@@ -208,7 +210,7 @@ with tab_queue:
 
             btn_col1, btn_col2 = st.columns(2)
             with btn_col1:
-                if st.button("Escalate & File SAR", type="primary", width="stretch"):
+                if st.button("Escalate & File SAR", type="primary", use_container_width=True):
                     log_audit_decision(
                         selected_enriched,
                         disposition="ESCALATED_SAR",
@@ -220,7 +222,7 @@ with tab_queue:
                     st.success(f"{alert.alert_id} escalated and logged to audit trail.")
 
             with btn_col2:
-                if st.button("Clear as False Positive", width="stretch"):
+                if st.button("Clear as False Positive", use_container_width=True):
                     log_audit_decision(
                         selected_enriched,
                         disposition="CLEARED_FALSE_POSITIVE",
@@ -231,44 +233,41 @@ with tab_queue:
                     st.session_state["decisions"][alert.alert_id] = "CLEARED_FALSE_POSITIVE"
                     st.success(f"{alert.alert_id} cleared and logged to audit trail.")
 
-    if AUDIT_LOG_PATH.exists():
-        st.divider()
-        st.subheader("3. Investigator Audit Log (`data/audit_logs/triage_decisions.jsonl`)")
-        with open(AUDIT_LOG_PATH, "r", encoding="utf-8") as f:
-            log_rows = [json.loads(line) for line in f if line.strip()]
-        if log_rows:
-            audit_df = pd.DataFrame(log_rows)[
-                [
-                    "logged_at_utc",
-                    "alert_id",
-                    "subject_id",
-                    "transaction_amount_inr",
-                    "rule_risk_tier",
-                    "investigator_disposition",
+        if AUDIT_LOG_PATH.exists():
+            st.divider()
+            st.subheader("3. Investigator Audit Log (`data/audit_logs/triage_decisions.jsonl`)")
+            with open(AUDIT_LOG_PATH, "r", encoding="utf-8") as f:
+                log_rows = [json.loads(line) for line in f if line.strip()]
+            if log_rows:
+                audit_df = pd.DataFrame(log_rows)[
+                    [
+                        "logged_at_utc",
+                        "alert_id",
+                        "subject_id",
+                        "transaction_amount_inr",
+                        "rule_risk_tier",
+                        "investigator_disposition",
+                    ]
                 ]
-            ]
-            st.dataframe(audit_df.tail(10), hide_index=True, width="stretch")
+                st.dataframe(audit_df.tail(10), hide_index=True, use_container_width=True)
 
-with tab_single:
-    st.subheader("Simulate & Score a Single Transaction")
-    st.caption(
-        "Test custom scenarios live through Pydantic Zero-PII validation, deterministic risk scoring, and Gemini explanation."
-    )
+with tab_sim:
+    st.subheader("Live Single Transaction Simulator")
+    st.caption("Test Zero-PII validation, behavioral risk scoring, and Gemini SAR generation on custom parameters.")
 
-    with st.form("single_tx_form"):
+    with st.form("single_tx_sim_form"):
         c1, c2, c3 = st.columns(3)
-        subj_id = c1.text_input("Subject ID (must start with SUBJ_)", value="SUBJ_DEMO_901")
-        cpty_id = c2.text_input("Counterparty ID (must start with CPTY_)", value="CPTY_DEMO_404")
-        channel = c3.selectbox("Payment Channel", options=["SWIFT", "NEFT", "RTGS", "IMPS"], index=0)
+        sim_subject = c1.text_input("Subject ID (must start with SUBJ_)", value="SUBJ_DEMO9901")
+        sim_cpty = c2.text_input("Counterparty ID (must start with CPTY_)", value="CPTY_DEMO8802")
+        sim_channel = c3.selectbox("Payment Channel", options=["SWIFT", "NEFT", "RTGS", "IMPS"], index=0)
 
         c4, c5, c6 = st.columns(3)
-        tx_amount = c4.number_input("Transaction Amount (INR)", min_value=100.0, value=285000.0, step=5000.0)
-        avg_daily = c5.number_input("12M Daily Avg Amount (INR)", min_value=100.0, value=7200.0, step=500.0)
-        tenure_mos = c6.number_input("Account Tenure (Months)", min_value=1, value=8, step=1)
+        sim_amount = c4.number_input("Transaction Amount (INR)", min_value=1000.0, value=310000.0, step=5000.0)
+        sim_avg_daily = c5.number_input("12M Daily Avg (INR)", min_value=500.0, value=7500.0, step=500.0)
+        sim_tenure = c6.number_input("Account Tenure (Months)", min_value=1, value=9, step=1)
 
         c7, c8, c9 = st.columns(3)
-        acct_type = c7.selectbox("Account Type", options=["RETAIL_SAVINGS", "SME_CURRENT", "FREELANCE_CURRENT"])
-        cpty_rel = c8.selectbox(
+        sim_rel = c7.selectbox(
             "Counterparty Relationship",
             options=[
                 "NEW_FIRST_TIME_COUNTERPARTY",
@@ -278,47 +277,46 @@ with tab_single:
                 "VERIFIED_INSTITUTIONAL_SOURCE",
             ],
         )
-        velocity_24h = c9.number_input("24h Transaction Velocity", min_value=1, value=5, step=1)
-        retention_hrs = st.slider("Funds Retention Window (Hours)", min_value=0.1, max_value=120.0, value=0.8, step=0.1)
+        sim_velocity = c8.number_input("24h Transaction Count", min_value=1, value=5, step=1)
+        sim_retention = c9.number_input("Funds Retention (Hours)", min_value=0.1, value=0.6, step=0.5)
 
         submitted = st.form_submit_button("Evaluate Transaction", type="primary")
 
     if submitted:
         try:
-            custom_alert = AlertRecord(
-                alert_id="ALT-DEMO-LIVE",
+            spike = round(sim_amount / sim_avg_daily, 2)
+            sim_alert = AlertRecord(
+                alert_id="ALT-2026-SIM1",
                 timestamp=datetime.now(timezone.utc).strftime("%Y/%m/%d %H:%M"),
-                subject_id=subj_id.strip(),
-                counterparty_id=cpty_id.strip(),
-                ibm_source_flag=1 if tx_amount / avg_daily >= 20 else 0,
-                account_type=acct_type,
-                account_tenure_months=int(tenure_mos),
-                payment_channel=channel,
+                subject_id=sim_subject.strip(),
+                counterparty_id=sim_cpty.strip(),
+                account_type="RETAIL_SAVINGS",
+                account_tenure_months=int(sim_tenure),
+                payment_channel=sim_channel,
                 currency="INR",
-                transaction_amount=float(tx_amount),
+                transaction_amount=float(sim_amount),
                 baseline_12m=Baseline12M(
-                    avg_daily_tx_amount=float(avg_daily),
-                    max_historical_tx_amount=round(float(avg_daily) * 2.2, 2),
-                    avg_monthly_tx_count=22,
-                    spike_multiplier=round(float(tx_amount) / float(avg_daily), 2),
+                    avg_daily_tx_amount=float(sim_avg_daily),
+                    max_historical_tx_amount=round(float(sim_avg_daily) * 2.2, 2),
+                    avg_monthly_tx_count=20,
+                    spike_multiplier=spike,
                 ),
                 behavioral_signals=BehavioralSignals(
-                    scenario_archetype="LIVE_SIMULATION",
-                    counterparty_relationship=cpty_rel,
-                    velocity_24h_tx_count=int(velocity_24h),
-                    funds_retention_hours=float(retention_hrs),
+                    scenario_archetype="LIVE_SIMULATED_SCENARIO",
+                    counterparty_relationship=sim_rel,
+                    velocity_24h_tx_count=int(sim_velocity),
+                    funds_retention_hours=float(sim_retention),
                     triggered_rule="RULE_HIGH_VALUE_BASELINE_DEVIATION",
                 ),
-                ground_truth_label="ANOMALY_ESCALATE",
             )
-            custom_enriched = enrich_alert(custom_alert)
-            custom_dossier = synthesize_triage_dossier(custom_enriched, use_live_llm=use_live_llm)
+            sim_enriched = enrich_alert(sim_alert)
+            sim_dossier = synthesize_triage_dossier(sim_enriched, use_live_llm=use_live_llm)
 
             st.success(
-                f"Risk Score: **{custom_enriched.risk_score}/100 ({custom_enriched.rule_risk_tier})** | "
-                f"Recommendation: **{custom_dossier.recommended_action}** (`{custom_dossier.generation_mode}`)"
+                f"Risk Score: {sim_enriched.risk_score}/100 ({sim_enriched.rule_risk_tier}) | "
+                f"Recommendation: {sim_dossier.recommended_action} | Mode: {sim_dossier.generation_mode}"
             )
-            st.write("**Analytical Reasoning:**", custom_dossier.reasoning_summary)
-            st.text_area("Generated Compliance Narrative", value=custom_dossier.compliance_draft, height=180)
+            st.write("**Reasoning:**", sim_dossier.reasoning_summary)
+            st.text_area("Generated Compliance Output", value=sim_dossier.compliance_draft, height=200)
         except Exception as exc:
-            st.error(f"Validation error: {exc}")
+            st.error(f"Validation Error: {exc}")

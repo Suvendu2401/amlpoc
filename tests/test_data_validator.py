@@ -1,6 +1,6 @@
 import pytest
 from pydantic import ValidationError
-from src.alert_loader import load_validated_alerts, get_alert_by_id
+from src.alert_loader import get_alert_by_id, load_validated_alerts
 from src.data_validator import AlertRecord
 
 

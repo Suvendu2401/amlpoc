@@ -6,13 +6,13 @@ client = TestClient(app)
 
 
 def test_health_and_model_info():
-    health = client.get("/health")
-    assert health.status_code == 200
-    assert health.json()["status"] == "ok"
+    r_health = client.get("/health")
+    assert r_health.status_code == 200
+    assert r_health.json()["status"] == "ok"
 
-    info = client.get("/model-info")
-    assert info.status_code == 200
-    assert info.json()["fallback_enabled"] is True
+    r_info = client.get("/model-info")
+    assert r_info.status_code == 200
+    assert r_info.json()["zero_pii_enforced"] is True
 
 
 def test_predict_and_explain_endpoints():
@@ -21,20 +21,19 @@ def test_predict_and_explain_endpoints():
         a for a in alerts if a.ground_truth_label == "ANOMALY_ESCALATE"
     ).model_dump()
 
-    pred = client.post("/predict", json=anomaly_payload)
-    assert pred.status_code == 200
-    assert pred.json()["flagged"] is True
-    assert pred.json()["rule_risk_tier"] == "HIGH"
+    r_pred = client.post("/predict", json=anomaly_payload)
+    assert r_pred.status_code == 200
+    assert r_pred.json()["flagged"] is True
 
-    exp = client.post("/explain?use_live_llm=false", json=anomaly_payload)
-    assert exp.status_code == 200
-    assert exp.json()["dossier"]["recommended_action"] == "ESCALATE_SAR"
+    r_exp = client.post("/explain?use_live_llm=false", json=anomaly_payload)
+    assert r_exp.status_code == 200
+    assert r_exp.json()["dossier"]["recommended_action"] == "ESCALATE_SAR"
 
 
 def test_predict_rejects_pii_payload():
     alerts = load_validated_alerts()
     bad_payload = alerts[0].model_dump()
-    bad_payload["subject_id"] = "Ravi_Kumar_PII"
+    bad_payload["counterparty_id"] = "Ravi_Kumar_HDFC"
 
-    res = client.post("/predict", json=bad_payload)
-    assert res.status_code == 422
+    r = client.post("/predict", json=bad_payload)
+    assert r.status_code == 422

@@ -22,7 +22,7 @@ class AlertRecord(BaseModel):
     timestamp: str
     subject_id: str
     counterparty_id: str
-    ibm_source_flag: Literal[0, 1]
+    ibm_source_flag: Literal[0, 1] = 0
     account_type: str
     account_tenure_months: int = Field(..., ge=1)
     payment_channel: Literal["SWIFT", "NEFT", "RTGS", "IMPS"]
@@ -30,7 +30,7 @@ class AlertRecord(BaseModel):
     transaction_amount: float = Field(..., gt=0)
     baseline_12m: Baseline12M
     behavioral_signals: BehavioralSignals
-    ground_truth_label: Literal["ANOMALY_ESCALATE", "BENIGN_FALSE_POSITIVE"]
+    ground_truth_label: Literal["ANOMALY_ESCALATE", "BENIGN_FALSE_POSITIVE", "UNLABELED_LIVE"] = "UNLABELED_LIVE"
 
     @field_validator("subject_id")
     @classmethod

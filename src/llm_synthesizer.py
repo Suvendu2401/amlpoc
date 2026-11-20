@@ -1,4 +1,5 @@
 import json
+import os
 from typing import Literal
 from google import genai
 from google.genai import types
@@ -59,7 +60,7 @@ def _build_zero_pii_payload(enriched: EnrichedAlert) -> dict:
 
 def _generate_fallback_dossier(enriched: EnrichedAlert) -> TriageDossier:
     a = enriched.alert
-    is_high_risk = enriched.rule_risk_tier == "HIGH"
+    is_high_risk = enriched.risk_score >= 40
 
     if is_high_risk:
         flags_text = " ".join(enriched.red_flags)
@@ -75,7 +76,7 @@ def _generate_fallback_dossier(enriched: EnrichedAlert) -> TriageDossier:
             f"SUSPICIOUS ACTIVITY REPORT (SAR) NARRATIVE — {a.alert_id}\n"
             f"- WHO: Subject {a.subject_id} ({a.account_type}, tenure {a.account_tenure_months} months) "
             f"transacting with counterparty {a.counterparty_id} ({a.behavioral_signals.counterparty_relationship}).\n"
-            f"- WHAT: High-value outbound/inbound transfer of INR {a.transaction_amount:,.2f}, representing a "
+            f"- WHAT: High-value transfer of INR {a.transaction_amount:,.2f}, representing a "
             f"{a.baseline_12m.spike_multiplier:.1f}x spike over the 12-month daily average of "
             f"INR {a.baseline_12m.avg_daily_tx_amount:,.2f} and {enriched.max_historical_ratio:.2f}x the prior maximum.\n"
             f"- WHEN: Flagged at {a.timestamp} with a {a.behavioral_signals.velocity_24h_tx_count}-transaction "
@@ -86,7 +87,7 @@ def _generate_fallback_dossier(enriched: EnrichedAlert) -> TriageDossier:
         return TriageDossier(
             alert_id=a.alert_id,
             recommended_action="ESCALATE_SAR",
-            confidence_score=round(min(0.97, 0.70 + (enriched.risk_score - 65) * 0.008), 2),
+            confidence_score=round(min(0.97, max(0.65, 0.70 + (enriched.risk_score - 65) * 0.008)), 2),
             reasoning_summary=reasoning,
             compliance_draft=draft,
             generation_mode="DETERMINISTIC_FALLBACK",
@@ -120,15 +121,15 @@ def _generate_fallback_dossier(enriched: EnrichedAlert) -> TriageDossier:
 def synthesize_triage_dossier(
     enriched: EnrichedAlert, use_live_llm: bool = True
 ) -> TriageDossier:
-    """Generates a structured AI triage dossier via Gemini for flagged alerts, with offline fallback."""
-    has_valid_key = bool(GEMINI_API_KEY) and GEMINI_API_KEY != "your_gemini_api_key_here"
-    is_flagged = enriched.rule_risk_tier in {"HIGH", "MEDIUM"}
+    """Generates a structured AI triage dossier via Gemini, falling back cleanly if offline."""
+    active_key = os.getenv("GEMINI_API_KEY", "") or GEMINI_API_KEY
+    has_valid_key = bool(active_key) and active_key != "your_gemini_api_key_here"
 
-    if not use_live_llm or not has_valid_key or not is_flagged:
+    if not use_live_llm or not has_valid_key:
         return _generate_fallback_dossier(enriched)
 
     try:
-        client = genai.Client(api_key=GEMINI_API_KEY)
+        client = genai.Client(api_key=active_key)
         payload = _build_zero_pii_payload(enriched)
 
         response = client.models.generate_content(

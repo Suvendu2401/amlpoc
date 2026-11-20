@@ -45,9 +45,8 @@ def enrich_alert(alert: AlertRecord) -> EnrichedAlert:
 
     red_flags: list[str] = []
     mitigating_factors: list[str] = []
-    score = 30  # Neutral baseline prior to behavioral adjustments
+    score = 30
 
-    # 1. Baseline Spike Evaluation
     if spike_mult >= 35.0:
         red_flags.append(
             f"Extreme baseline deviation: INR {tx_amt:,.2f} is {spike_mult:.1f}x the 12-month daily average (INR {avg_daily:,.2f})."
@@ -59,7 +58,6 @@ def enrich_alert(alert: AlertRecord) -> EnrichedAlert:
         )
         score += 15
 
-    # 2. Counterparty Relationship Context
     if cpty_rel in SUSPICIOUS_COUNTERPARTY_RELS:
         red_flags.append(
             f"Unverified counterparty profile ({cpty_rel}) with no prior 12-month settlement history."
@@ -71,7 +69,6 @@ def enrich_alert(alert: AlertRecord) -> EnrichedAlert:
         )
         score -= 25
 
-    # 3. Funds Retention & Pass-Through Velocity
     if retention_hrs <= LOW_RETENTION_HOURS_THRESHOLD:
         red_flags.append(
             f"Rapid pass-through layering indicator: funds retained for only {retention_hrs:.1f} hours."
@@ -94,7 +91,6 @@ def enrich_alert(alert: AlertRecord) -> EnrichedAlert:
         )
         score -= 10
 
-    # 4. Account Tenure & Entity Profile
     if alert.account_tenure_months < 12:
         red_flags.append(
             f"Recently onboarded account (tenure: {alert.account_tenure_months} months)."
